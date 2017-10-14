@@ -11,7 +11,7 @@ namespace PlantApp.Data
     public class PlantAppInitializer : DropCreateDatabaseIfModelChanges<PlantAppContext>
     {
         protected override void Seed(PlantAppContext context)
-        {
+       {
             var plantSpecies3 = new PlantSpecies()
             {
                 Name = "prva biljka",

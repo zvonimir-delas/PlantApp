@@ -15,7 +15,7 @@ namespace PlantApp.Data.Models
         public int WateringFrequencyDays { get; set; }
         public int MinimalWaterAmountForWatering { get; set; }
         public Color Color { get; set; }
-        public List<int> MonthsOfFlowering { get; set; } = new List<int>();
+        public List<int> MonthsOfFlowering { get; set; }
         public string MaintenceGuide { get; set; }
 
         public Seedling Seedling { get; set; }
