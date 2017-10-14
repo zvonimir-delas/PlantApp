@@ -4,11 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using PlantApp.Data.Models;
 
 namespace PlantApp.Data
 {
-    class PlantAppContext : DbContext
+    public class PlantAppContext : DbContext
     {
+        public PlantAppContext() : base()
+        {
+            Database.SetInitializer(new PlantAppInitializer());
+        }
 
+        public virtual DbSet<PlantSpecies> PlantSpecies { get; set; }
+        public virtual DbSet<Seedling> Seedlings { get; set; }
     }
 }
