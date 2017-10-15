@@ -17,8 +17,8 @@ namespace PlantApp.Data
                 Name = "prva biljka",
                 WateringFrequencyDays = 3000,
                 MinimalWaterAmountForWatering = 10,
-                Color = Color.Blue,
-                MonthsOfFlowering = new List<int> { 1, 2 },
+                Color = "Blue",
+                MonthsOfFlowering = "12345",
                 MaintenceGuide = "ne gaziti",
                 Seedling = null
             };

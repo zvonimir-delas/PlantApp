@@ -26,7 +26,7 @@ namespace PlantApp.Domain.Controllers
 
         [HttpGet]
         [Route("getPlant/{id:int}")]
-        public PlantSpecies getPlantById(int id)
+        public PlantSpecies GetPlantById(int id)
         {
             using (var context = new PlantAppContext())
             {
@@ -57,7 +57,6 @@ namespace PlantApp.Domain.Controllers
         */
         [HttpPost]
         [Route("delete/{id:int}")]
-        //POSSIBLE REFACTURING: object as a paramater
         public void DeletePlant(int id)
         {
             using (var context = new PlantAppContext())
@@ -67,6 +66,21 @@ namespace PlantApp.Domain.Controllers
                 context.Entry(plant).State = EntityState.Deleted;                
                 context.SaveChanges();
             }
+        }
+
+        [HttpPost]
+        [Route("update/")]
+        // syntax to receive a complex object:
+        public string UpdatePlant(HttpRequestMessage request,
+            [FromBody] PlantSpecies plant)
+        {
+            using (var context = new PlantAppContext())
+            {
+                context.Entry(plant).State = EntityState.Modified;
+                context.SaveChanges();
+            }
+
+            return "Changes have been saved";
         }
     }
 }
