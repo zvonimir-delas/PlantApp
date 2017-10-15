@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Plant site</title>
+    <!--For refresh to work, base href must be right after the title tag-->
+    <base href="/" />
 
     <script src="scripts/vendor/angular.js"></script>
     <script src="scripts/vendor/angular-ui-router.js"></script>
@@ -22,7 +24,7 @@
     <script src="scripts/app/directives/plantLister/plantLister.directive.js"></script>
     <script src="scripts/app/directives/plantLister/plantLister.controller.js"></script>
 
-    <base href="/" />
+
 </head>
 <body>
     <div ui-view></div>
