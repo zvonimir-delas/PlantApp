@@ -1,4 +1,4 @@
-﻿angular.module('myApp').controller('plantSpecieDetailsController', function ($scope, $stateParams, $http) {
+﻿angular.module('myApp').controller('plantSpecieDetailsController', function ($scope, $stateParams, $http, $state) {
 
     //get plant from Api by id (IIFE), invoked upon route loading
     ($scope.init = function ()
@@ -17,5 +17,17 @@
                 "Content-Type": "application/json"
             }
         }).then(function (result) { $scope.savedMessage = result.data; });
+    };
+
+    $scope.deletePlantSpecie = function () {
+        $http({
+            url: "http://localhost:51267/api/plantSpecie/delete",
+            dataType: 'json',
+            method: 'POST',
+            data: $scope.plantSpecie,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function () { $state.go('home'); });
     };
 });

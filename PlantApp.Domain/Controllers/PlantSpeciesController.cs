@@ -49,14 +49,13 @@ namespace PlantApp.Domain.Controllers
         }
 
         [HttpPost]
-        [Route("delete/{id:int}")]
-        public void DeletePlantSpecie(int id)
+        [Route("delete")]
+        public void DeletePlant(HttpRequestMessage request,
+            [FromBody] PlantSpecie plantSpecie)
         {
             using (var context = new PlantAppContext())
             {
-                var plant = context.PlantSpecies.Where(x => x.Id == id).FirstOrDefault();
-
-                context.Entry(plant).State = EntityState.Deleted;                
+                context.Entry(plantSpecie).State = EntityState.Deleted;                
                 context.SaveChanges();
             }
         }
