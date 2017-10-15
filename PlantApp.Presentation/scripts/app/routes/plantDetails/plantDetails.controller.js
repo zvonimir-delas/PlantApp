@@ -6,7 +6,7 @@
         $http.get("http://localhost:51267/api/plant/getPlant/"+$stateParams.plantId).then(function (result) { $scope.plant = result.data; });
     })();
 
-    $scope.updatePlant = function () {
+    $scope.saveChanges = function () {
 
         $http({
             url: "http://localhost:51267/api/plant/update/",

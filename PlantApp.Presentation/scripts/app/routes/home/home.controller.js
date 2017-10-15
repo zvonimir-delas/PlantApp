@@ -1,7 +1,7 @@
 ﻿angular.module('myApp').controller('homeController', function ($scope, $stateParams, $http) {
 
-    $scope.testFunction = function () {
-        $http.get("http://localhost:51267/api/plant/getAll/5").then(function (result) { $scope.varijabla = result.data; });
-        console.log("test function angular");
-    };
+    // get all plants from Api by id (IIFE), invoked upon route loading
+    ($scope.init = function () {
+        $http.get("http://localhost:51267/api/plant/getAll").then(function (result) { $scope.plants = result.data;});
+    })();
 });

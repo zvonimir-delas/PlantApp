@@ -16,7 +16,7 @@ namespace PlantApp.Domain.Controllers
 
         [HttpGet]
         [Route("getAll")]
-        public List<PlantSpecies> getAllPlants()
+        public List<PlantSpecies> GetAllPlants()
         {
             using (var context = new PlantAppContext())
             {
@@ -34,27 +34,29 @@ namespace PlantApp.Domain.Controllers
             }
         }
 
-        /*[HttpPost]
+        [HttpPost]
         [Route("add")]
-        public void AddNewPlant(string name, int wateringFrequencyDays, int minimalAmountOfWatering, int color, string maintenceGuide)
+        public string AddNewPlant(HttpRequestMessage request,
+            [FromBody] PlantSpecies newPlant)
         {
             using (var context = new PlantAppContext())
             {
-                var newPlant = new PlantSpecies()
+                /*var newPlant = new PlantSpecies()
                 {
                     Name = name,
                     WateringFrequencyDays = wateringFrequencyDays,
                     MinimalWaterAmountForWatering = minimalAmountOfWatering,
                     Color = (Color)color,
                     MaintenceGuide = maintenceGuide
-                };
+                };*/
 
                 context.PlantSpecies.Add(newPlant);
-
                 context.SaveChanges();
+
+                return "Added new plant";
             }
         }
-        */
+
         [HttpPost]
         [Route("delete/{id:int}")]
         public void DeletePlant(int id)

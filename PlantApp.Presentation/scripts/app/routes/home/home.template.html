@@ -1,4 +1,4 @@
-﻿<div>HOME</div>
-<div>{{varijabla[0].Name}}</div>
-<button ng-click="testFunction()"></button>
-<button ui-sref="plantDetails({plantId: 1})">Details</button>
+﻿<div ng-repeat="plant in plants">
+    <div>{{plant.Name}}</div> <button ui-sref="plantDetails({plantId: plant.Id})">Details</button>
+</div>
+<button ui-sref="addNewPlant">Add new plant</button>
