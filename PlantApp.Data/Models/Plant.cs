@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace PlantApp.Data.Models
 {
-    public class Seedling
+    public class Plant
     {
         public int Id { get; set; }
-        public string Name { get; set; }
 
-        public ICollection<Plant> Plants { get; set; }
+        public PlantSpecie PlantSpecie { get; set; }
+        public Seedling Seedling { get; set; }
     }
 }

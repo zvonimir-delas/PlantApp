@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace PlantApp.Data.Models
 {
 
-    public class PlantSpecies
+    public class PlantSpecie
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -17,6 +17,6 @@ namespace PlantApp.Data.Models
         public string MonthsOfFlowering { get; set; }
         public string MaintenceGuide { get; set; }
 
-        public Seedling Seedling { get; set; }
+        public ICollection<Plant> Plants { get; set; }
     }
 }

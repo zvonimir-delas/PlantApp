@@ -15,7 +15,8 @@ namespace PlantApp.Data
             Database.SetInitializer(new PlantAppInitializer());
         }
 
-        public virtual DbSet<PlantSpecies> PlantSpecies { get; set; }
+        public virtual DbSet<PlantSpecie> PlantSpecies { get; set; }
         public virtual DbSet<Seedling> Seedlings { get; set; }
+        public virtual DbSet<Plant> Plants { get; set; }
     }
 }

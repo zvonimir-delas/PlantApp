@@ -10,13 +10,13 @@ using System.Data.Entity;
 
 namespace PlantApp.Domain.Controllers
 {
-    [RoutePrefix("api/plant")]
+    [RoutePrefix("api/plantSpecie")]
     public class PlantSpeciesController : ApiController
     {
 
         [HttpGet]
         [Route("getAll")]
-        public List<PlantSpecies> GetAllPlants()
+        public List<PlantSpecie> GetAllPlantSpecies()
         {
             using (var context = new PlantAppContext())
             {
@@ -25,8 +25,8 @@ namespace PlantApp.Domain.Controllers
         }
 
         [HttpGet]
-        [Route("getPlant/{id:int}")]
-        public PlantSpecies GetPlantById(int id)
+        [Route("getPlantSpecie/{id:int}")]
+        public PlantSpecie GetPlantSpecieById(int id)
         {
             using (var context = new PlantAppContext())
             {
@@ -36,30 +36,21 @@ namespace PlantApp.Domain.Controllers
 
         [HttpPost]
         [Route("add")]
-        public string AddNewPlant(HttpRequestMessage request,
-            [FromBody] PlantSpecies newPlant)
+        public string AddNewPlantSpecie(HttpRequestMessage request,
+            [FromBody] PlantSpecie newPlantSpecie)
         {
             using (var context = new PlantAppContext())
             {
-                /*var newPlant = new PlantSpecies()
-                {
-                    Name = name,
-                    WateringFrequencyDays = wateringFrequencyDays,
-                    MinimalWaterAmountForWatering = minimalAmountOfWatering,
-                    Color = (Color)color,
-                    MaintenceGuide = maintenceGuide
-                };*/
-
-                context.PlantSpecies.Add(newPlant);
+                context.PlantSpecies.Add(newPlantSpecie);
                 context.SaveChanges();
 
-                return "Added new plant";
+                return "Added new plant specie";
             }
         }
 
         [HttpPost]
         [Route("delete/{id:int}")]
-        public void DeletePlant(int id)
+        public void DeletePlantSpecie(int id)
         {
             using (var context = new PlantAppContext())
             {
@@ -74,11 +65,11 @@ namespace PlantApp.Domain.Controllers
         [Route("update/")]
         // syntax to receive a complex object:
         public string UpdatePlant(HttpRequestMessage request,
-            [FromBody] PlantSpecies plant)
+            [FromBody] PlantSpecie plantSpecie)
         {
             using (var context = new PlantAppContext())
             {
-                context.Entry(plant).State = EntityState.Modified;
+                context.Entry(plantSpecie).State = EntityState.Modified;
                 context.SaveChanges();
             }
 

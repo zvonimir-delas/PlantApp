@@ -47,7 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\PlantSpecies.cs" />
+    <Compile Include="Models\Plant.cs" />
+    <Compile Include="Models\PlantSpecie.cs" />
     <Compile Include="Models\Seedling.cs" />
     <Compile Include="PlantAppContext.cs" />
     <Compile Include="PlantAppInitializer.cs" />

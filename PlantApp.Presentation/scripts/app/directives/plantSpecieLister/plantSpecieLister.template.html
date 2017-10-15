@@ -1,0 +1,8 @@
+﻿<div>plantSpecie lister</div>
+<div>Name: <input type="text" ng-model="plantSpecie.Name" /></div>
+<div>Water every <input type="text" ng-model="plantSpecie.WateringFrequencyDays" /> days with minimum of <input type="text" ng-model="plantSpecie.MinimalWaterAmountForWatering" /> liters</div>
+<div>Color: <input type="text" ng-model="plantSpecie.Color" /></div>
+<div>Months of flowering: <input type="text" ng-model="plantSpecie.MonthsOfFlowering" /></div>
+<div> Maintence Guide: <input type="text" ng-model="plantSpecie.MaintenceGuide" /></div>
+<button ng-click="saveChanges()">Save changes</button>
+<div>{{savedMessage}}</div>

@@ -12,18 +12,17 @@ namespace PlantApp.Data
     {
         protected override void Seed(PlantAppContext context)
        {
-            var plantSpecies3 = new PlantSpecies()
+            var plantSpecie1 = new PlantSpecie()
             {
                 Name = "prva biljka",
                 WateringFrequencyDays = 3000,
                 MinimalWaterAmountForWatering = 10,
                 Color = "Blue",
                 MonthsOfFlowering = "12345",
-                MaintenceGuide = "ne gaziti",
-                Seedling = null
+                MaintenceGuide = "ne gaziti"
             };
 
-            context.PlantSpecies.Add(plantSpecies3);
+            context.PlantSpecies.Add(plantSpecie1);
 
             context.SaveChanges();
 

@@ -1,4 +1,4 @@
-﻿<div ng-repeat="plant in plants">
-    <div>{{plant.Name}}</div> <button ui-sref="plantDetails({plantId: plant.Id})">Details</button>
+﻿<div ng-repeat="plantSpecie in plantSpecies">
+    <div>{{plantSpecie.Name}}</div> <button ui-sref="plantSpecieDetails({plantSpecieId: plantSpecie.Id})">Details</button>
 </div>
-<button ui-sref="addNewPlant">Add new plant</button>
+<button ui-sref="addNewPlantSpecie">Add new plant specie</button>
