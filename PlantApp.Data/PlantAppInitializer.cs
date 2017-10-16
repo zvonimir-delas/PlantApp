@@ -14,21 +14,21 @@ namespace PlantApp.Data
         {
             var plantSpecie1 = new PlantSpecie()
             {
-                Name = "prva biljka",
+                Name = "prva vrsta",
                 WateringFrequencyDays = 3000,
                 MinimalWaterAmountForWatering = 10,
                 Color = "Blue",
-                MonthsOfFlowering = "12345",
+                MonthsOfFlowering = "12,3,4,5",
                 MaintenceGuide = "ne gaziti"
             };
 
             var plantSpecie2 = new PlantSpecie()
             {
-                Name = "druga biljka",
+                Name = "druga vrsta",
                 WateringFrequencyDays = 50,
                 MinimalWaterAmountForWatering = 20,
                 Color = "Red",
-                MonthsOfFlowering = "12345",
+                MonthsOfFlowering = "1,2,3,4,5",
                 MaintenceGuide = "nista posebno"
             };
 

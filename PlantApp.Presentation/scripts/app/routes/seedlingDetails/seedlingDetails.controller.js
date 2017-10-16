@@ -21,6 +21,10 @@
     };
 
     $scope.water = function (seedling) {
-        $http.post("http://localhost:51267/api/seedling/water/" + $scope.seedling.Id).then(function (result) { console.log(result.data); });
-    }
+        $http.post("http://localhost:51267/api/seedling/water/" + $scope.seedling.Id);
+    };
+
+    $scope.deleteSeedling = function (seedling) {
+        $http.post("http://localhost:51267/api/seedling/deleteSeedling/" + $scope.seedling.Id).then(function (result) { $state.go('seedlingList'); });
+    };
 });

@@ -4,6 +4,7 @@
 </div> 
 
 <div ng-hide="waterVolume == 0">This seedling should be watered with: {{waterVolume}}</div>
+<button ng-click="deleteSeedling()">Delete seedling</button>
 <div>New plant species name:</div>
 <input type="text" ng-model="newName"/>
 <button ng-click="newPlant()">Add</button>

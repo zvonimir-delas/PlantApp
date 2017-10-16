@@ -106,5 +106,35 @@ namespace PlantApp.Domain.Controllers
                 context.SaveChanges();
             }
         }
+
+        [HttpPost]
+        [Route("deleteSeedling/{id:int}")]
+        public void DeleteSeedling(int id)
+        {
+            using (var context = new PlantAppContext())
+            {
+                var seedling = context.Seedlings.Where(x => x.Id == id).FirstOrDefault();
+
+                for (int i = 0; i < seedling.Plants.ToList().Count(); i++)
+                {
+                    context.Entry(seedling.Plants.ToList()[i]).State = EntityState.Deleted;
+                }
+
+                context.Entry(seedling).State = EntityState.Deleted;
+                context.SaveChanges();
+            }
+        }
+
+        [HttpPost]
+        [Route("addSeedling/")]
+        public void AddSeedling(HttpRequestMessage request,
+            [FromBody] Seedling seedling)
+        {
+            using (var context = new PlantAppContext())
+            {
+                context.Seedlings.Add(seedling);
+                context.SaveChanges();
+            }
+        }
     }
 }

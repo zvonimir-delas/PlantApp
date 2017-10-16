@@ -7,7 +7,7 @@
 
     $scope.water = function (seedling) {
         $http.post("http://localhost:51267/api/seedling/water/" + seedling.Id).then(function (result) { console.log(result.data); });
-    }
+    };
 
     $scope.toggleExpand = function (seedling) {
         $scope.expandedSeedling = $scope.expandedSeedling === seedling ? null : seedling;
