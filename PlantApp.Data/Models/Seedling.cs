@@ -11,6 +11,6 @@ namespace PlantApp.Data.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<Plant> Plants { get; set; }
+        public virtual ICollection<Plant> Plants { get; set; }
     }
 }

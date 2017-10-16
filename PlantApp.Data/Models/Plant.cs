@@ -10,7 +10,7 @@ namespace PlantApp.Data.Models
     {
         public int Id { get; set; }
 
-        public PlantSpecie PlantSpecie { get; set; }
-        public Seedling Seedling { get; set; }
+        public virtual PlantSpecie PlantSpecie { get; set; }
+        public virtual Seedling Seedling { get; set; }
     }
 }

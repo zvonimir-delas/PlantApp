@@ -17,6 +17,6 @@ namespace PlantApp.Data.Models
         public string MonthsOfFlowering { get; set; }
         public string MaintenceGuide { get; set; }
 
-        public ICollection<Plant> Plants { get; set; }
+        public virtual ICollection<Plant> Plants { get; set; }
     }
 }

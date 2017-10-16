@@ -1,0 +1,9 @@
+﻿<div ng-repeat="seedling in seedlings">
+    <div>{{seedling.Name}}</div>
+    <button ng-click="water(seedling)">Water</button>
+     <div ng-show="seedling === expandedSeedling" >
+    <div ng-repeat="plant in seedling.Plants">{{plant.PlantSpecie}}</div>
+    <button>Go to details</button>
+     </div>
+    <button ng-click="toggleExpand(seedling)">Toggle card</button>
+</div>

@@ -7,6 +7,7 @@ using System.Web.Http;
 using PlantApp.Data;
 using PlantApp.Data.Models;
 using System.Data.Entity;
+using PlantApp.Domain.DTOs;
 
 namespace PlantApp.Domain.Controllers
 {
@@ -16,21 +17,21 @@ namespace PlantApp.Domain.Controllers
 
         [HttpGet]
         [Route("getAll")]
-        public List<PlantSpecie> GetAllPlantSpecies()
+        public List<PlantSpecieDTO> GetAllPlantSpecies()
         {
             using (var context = new PlantAppContext())
             {
-                return context.PlantSpecies.ToList();
+                return context.PlantSpecies.ToList().Select(x => PlantSpecieDTO.FromEntity(x)).ToList();
             }
         }
 
         [HttpGet]
         [Route("getPlantSpecie/{id:int}")]
-        public PlantSpecie GetPlantSpecieById(int id)
+        public PlantSpecieDTO GetPlantSpecieById(int id)
         {
             using (var context = new PlantAppContext())
             {
-                return context.PlantSpecies.Where(x => x.Id == id).FirstOrDefault();
+                return context.PlantSpecies.Where(x => x.Id == id).ToList().Select(x => PlantSpecieDTO.FromEntity(x)).FirstOrDefault();
             }
         }
 

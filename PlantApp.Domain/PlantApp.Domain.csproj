@@ -159,6 +159,9 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\PlantSpeciesController.cs" />
+    <Compile Include="Controllers\SeedlingsController.cs" />
+    <Compile Include="DTOs\PlantSpecieDTO.cs" />
+    <Compile Include="DTOs\SeedlingDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
