@@ -1,3 +1,3 @@
 ﻿<plantspecielister></plantspecielister>
-<button ng-click="deletePlantSpecie()" ng-hide="$scope.plantSpecie.Plants">Delete Plant Specie</button>
-<div ng-show="$scope.plantSpecie.Plants">Plant specie cannot be deleted if there are plants of that specie</div>
+<button ng-click="deletePlantSpecie()" ng-hide="plantSpecie.Plants.length">Delete Plant Specie</button>
+<div ng-show="plantSpecie.Plants.length">Plant specie cannot be deleted if there are plants of that specie</div>

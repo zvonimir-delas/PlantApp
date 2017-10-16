@@ -3,7 +3,7 @@
     //get plant from Api by id (IIFE), invoked upon route loading
     ($scope.init = function ()
     {
-        $http.get("http://localhost:51267/api/plantSpecie/getPlantSpecie/" + $stateParams.plantSpecieId).then(function (result) { $scope.plantSpecie = result.data; });
+        $http.get("http://localhost:51267/api/plantSpecie/getPlantSpecie/" + $stateParams.plantSpecieId).then(function (result) { $scope.plantSpecie = result.data;});
     })();
 
     $scope.saveChanges = function () {
