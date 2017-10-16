@@ -46,19 +46,22 @@ namespace PlantApp.Data
             var plant1 = new Plant()
             {
                 PlantSpecie = plantSpecie1,
-                Seedling = seedling1
+                Seedling = seedling1,
+                TimeAndDateLastWatered = DateTime.Now,
             };
 
             var plant2 = new Plant()
             {
                 PlantSpecie = plantSpecie2,
-                Seedling = seedling1
+                Seedling = seedling1,
+                TimeAndDateLastWatered = DateTime.Now
             };
 
             var plant3 = new Plant()
             {
                 PlantSpecie = plantSpecie1,
-                Seedling = seedling2
+                Seedling = seedling2,
+                TimeAndDateLastWatered = DateTime.Now
             };
 
             seedling1.Plants = new List<Plant>{ plant1, plant2 };

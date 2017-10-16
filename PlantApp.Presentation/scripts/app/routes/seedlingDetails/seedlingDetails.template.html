@@ -1,0 +1,9 @@
+﻿<div ng-repeat="plant in seedling.Plants">
+    <div>{{plant.PlantSpecie.Name}}</div> <div>Watering frequency: {{plant.PlantSpecie.WateringFrequencyDays}}</div> <div>Minimal water amount: {{plant.PlantSpecie.MinimalWaterAmountForWatering}}</div>
+    <button ng-click="deletePlant(plant.Id)">Delete plant</button>
+</div> 
+
+<div ng-hide="waterVolume == 0">This seedling should be watered with: {{waterVolume}}</div>
+<div>New plant species name:</div>
+<input type="text" ng-model="newName"/>
+<button ng-click="newPlant()">Add</button>
